@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>qr-scanner</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Click Button To Scan</h1>
+
+  <div>
+    <button ion-button round (click)="scanCode()">Scan Code</button>
+  </div>
+
+  <div *ngIf="scannedData">
+    <p>
+      Scanned Code Text : <b>{{ scannedData['text'] }}</b>
+    </p>
+    <p>
+      Scanned Code Format : <b>{{ scannedData['format'] }}</b>
+    </p>
+  </div>
+
+  <div>
+    <ion-input type="text" [(ngModel)]="encodedData"></ion-input>
+    <button ion-button (click)="encodedText()">Encode Text</button>
+  </div>
+
+  <div>
+    <button ion-button (click)="goBack()">Go Back</button>
+  </div>
+</ion-content>

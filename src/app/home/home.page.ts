@@ -48,6 +48,15 @@ export class HomePage implements OnInit {
       });
   }
 
+  directToScanner() {
+    let url = `/qr-scanner`;
+    let options: NavigationOptions = {
+      animated: true,
+      animationDirection: 'forward'
+    };
+    this.navCtrl.navigate(url, options);
+  }
+
   directToDetail(note: Note) {
     let id = note.id;
     let url = `/notes/${id}`;
