@@ -1,0 +1,8 @@
+Since there is something updated about the gradle. So there is a wrong during the compile with cordova.
+Something like: cannot resolve "com.android_support_v4_version 27.+" 
+and I found there is a plugin in the package.json related to the error. It is "android_support_v4_version 27.+".
+And it's injected when I install the barcode-scanner.
+So, search on google, there is a solution, it's to add a plugin like execute the bash:
+"cordova plugin add cordova-android-support-gradle-release --variable ANDROID_SUPPORT_VERSION=24.+"
+
+THe link: https://github.com/phonegap/phonegap-plugin-barcodescanner/issues/616
